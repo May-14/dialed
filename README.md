@@ -1,1 +1,1 @@
-# dialed
+A website that accepts user variables and gives a coffee recipe. It then takes in post-brew feedback/data and gives suggestions on improvement, based on user preferences.
