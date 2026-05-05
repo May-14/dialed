@@ -9,14 +9,15 @@
 </head>
 <body>
     <h1>Dialed</h1>
-    <h2>Method</h2>
+    <h2>Brew settings</h2>
+    <h3>Method</h3>
     <form name="method">
         <input type="radio" id="espresso" name="method" value="espresso">
         <label for="espresso">Espresso</label><br>
         <input type="radio" id="v60" name="method" value="v60">
         <label for="v60">v60</label><br>
     </form>
-    <h2>Espresso Machine Capabilities</h2>
+    <h3>Espresso Machine Capabilities</h3>
     <form name="machine-capabilities">
         <input type="checkbox" id="flow-control" name="machine-capabilities" value="flow">
         <label for="flow-control">Flow control</label><br>
@@ -25,7 +26,13 @@
         <input type="checkbox" id="tempratature-control" name="machine-capabilities" value="temperature">
         <label for="temperature">Temperature Control</label><br>
     </form>
-    <h2>Coffee Country of Origin</h2>
+    <h3>User elevation</h3>
+    <form name="user-elevation">
+        <input type="number" id="user-elevation" name="user-elevation" value="">
+        <label for="user-elevation">masl</label><br>
+    </form>
+    <h2>Coffee info</h2>
+    <h3>Coffee Country of Origin</h2\3>
     <form name="origin">
         <input type="radio" id="brazil" name="origin" value="brazil">
         <label for="brazil">Brazil</label><br>
@@ -42,7 +49,7 @@
         <input type="radio" id="mexico" name="origin" value="mexico">
         <label for="mexico">Mexico</label><br>
     </form>
-    <h2>Coffee Varietal</h2>
+    <h3>Coffee Varietal</h3>
     <form name="varietal">
         <input type="radio" id="bourbon" name="varietal" value="bourbon">
         <label for="bourbon">Bourbon</label><br>
@@ -70,6 +77,61 @@
         <label for="typica">Typica</label><br>
         <input type="radio" id="wush-wush" name="varietal" value="wush-wush">
         <label for="wush-wush">Wush Wush</label><br>
+    </form>
+        <h3>Roast level</h3>
+    <h4>Data input</h4>
+    <form name="roast-input">
+        <input type="radio" id="visual" name="roast-input" value="visual">
+        <label for="visual">Visual</label><br>
+        <input type="radio" id="agtron" name="roast-input" value="agtron">
+        <label for="agtron">Agtron reader</label><br>
+    </form>
+    <h4>Visual roast input</h4>
+    <form name="visual-roast-input">
+        <input type="radio" id="ultra-light" name="visual-roast-input" value="ultra-light">
+        <label for="ultra-light">Ultra light</label><br>
+        <input type="radio" id="light" name="visual-roast-input" value="light">
+        <label for="light">Light</label><br>
+        <input type="radio" id="med-light" name="visual-roast-input" value="med-light">
+        <label for="med-light">Medium light</label><br>
+        <input type="radio" id="med" name="visual-roast-input" value="med">
+        <label for="med">Medium</label><br>
+        <input type="radio" id="med-dark" name="visual-roast-input" value="med-dark">
+        <label for="med-dark">Medium dark</label><br>
+        <input type="radio" id="dark" name="visual-roast-input" value="dark">
+        <label for="dark">Dark</label><br>
+    </form>
+    <h4>Agtron reader input</h4>
+    <form name="agtron">
+        <input type="number" id="agtron-value" name="agtron" value="">
+        <label for="agtron-value">Agtron number</label><br>
+    </form>
+    <h3>Coffee processing</h3>
+    <form name="process-input">
+        <input type="radio" id="washed" name="process-input" value="washed">
+        <label for="washed">Washed</label><br>
+        <input type="radio" id="natural" name="process-input" value="natural">
+        <label for="natural">Natural</label><br>
+        <input type="radio" id="honey" name="process-input" value="honey">
+        <label for="honey">Honey</label><br>
+        <input type="radio" id="anaerobic" name="process-input" value="anaerobic">
+        <label for="anaerobic">Anaerobic</label><br>
+        <input type="radio" id="carbonic-maceration" name="process-input" value="carbonic-maceration">
+        <label for="carbonic-maceration">Carbonic Maceration</label><br>
+        <input type="radio" id="thermal-shock" name="process-input" value="thermal-shock">
+        <label for="thermal-shock">Thermal Shock / Co-ferment</label><br>
+        <input type="radio" id="decaf" name="process-input" value="decaf">
+        <label for="decaf">Decaf (SWP / EA)</label><br>
+    </form>
+    <h3>Bean age (in days)</h3>
+    <form name="age">
+        <input type="number" id="age" name="age" value="">
+        <label for="age">Days</label><br>
+    </form>
+    <h3>Bean elevation</h3>
+    <form name="bean-elevation">
+        <input type="number" id="bean-elevation" name="bean-elevation" value="">
+        <label for="bean-elevation">masl</label><br>
     </form>
     <h2>Water composition</h2>
     <h3>PH</h3>
@@ -145,66 +207,6 @@
         <label for="kh-14">14 Drops (14 dKH / 250.6 ppm)</label><br>
         <input type="radio" id="kh-15" name="kh" value="15">
         <label for="kh-15">15+ Drops (15+ dKH / 268.5+ ppm)</label><br>
-    </form>
-    <h2>Roast level</h2>
-    <h3>Data input</h3>
-    <form name="roast-input">
-        <input type="radio" id="visual" name="roast-input" value="visual">
-        <label for="visual">Visual</label><br>
-        <input type="radio" id="agtron" name="roast-input" value="agtron">
-        <label for="agtron">Agtron reader</label><br>
-    </form>
-    <h3>Visual roast input</h3>
-    <form name="visual-roast-input">
-        <input type="radio" id="ultra-light" name="visual-roast-input" value="ultra-light">
-        <label for="ultra-light">Ultra light</label><br>
-        <input type="radio" id="light" name="visual-roast-input" value="light">
-        <label for="light">Light</label><br>
-        <input type="radio" id="med-light" name="visual-roast-input" value="med-light">
-        <label for="med-light">Medium light</label><br>
-        <input type="radio" id="med" name="visual-roast-input" value="med">
-        <label for="med">Medium</label><br>
-        <input type="radio" id="med-dark" name="visual-roast-input" value="med-dark">
-        <label for="med-dark">Medium dark</label><br>
-        <input type="radio" id="dark" name="visual-roast-input" value="dark">
-        <label for="dark">Dark</label><br>
-    </form>
-    <h3>Agtron reader input</h3>
-    <form name="agtron">
-        <input type="number" id="agtron-value" name="agtron" value="">
-        <label for="agtron-value">Agtron number</label><br>
-    </form>
-    <h2>Coffee processing</h2>
-    <form name="process-input">
-        <input type="radio" id="washed" name="process-input" value="washed">
-        <label for="washed">Washed</label><br>
-        <input type="radio" id="natural" name="process-input" value="natural">
-        <label for="natural">Natural</label><br>
-        <input type="radio" id="honey" name="process-input" value="honey">
-        <label for="honey">Honey</label><br>
-        <input type="radio" id="anaerobic" name="process-input" value="anaerobic">
-        <label for="anaerobic">Anaerobic</label><br>
-        <input type="radio" id="carbonic-maceration" name="process-input" value="carbonic-maceration">
-        <label for="carbonic-maceration">Carbonic Maceration</label><br>
-        <input type="radio" id="thermal-shock" name="process-input" value="thermal-shock">
-        <label for="thermal-shock">Thermal Shock / Co-ferment</label><br>
-        <input type="radio" id="decaf" name="process-input" value="decaf">
-        <label for="decaf">Decaf (SWP / EA)</label><br>
-    </form>
-    <h2>Bean age (in days)</h2>
-    <form name="age">
-        <input type="number" id="age" name="age" value="">
-        <label for="age">Days</label><br>
-    </form>
-    <h2>Bean elevation</h2>
-    <form name="bean-elevation">
-        <input type="number" id="bean-elevation" name="bean-elevation" value="">
-        <label for="bean-elevation">masl</label><br>
-    </form>
-    <h2>User elevation</h2>
-    <form name="user-elevation">
-        <input type="number" id="user-elevation" name="user-elevation" value="">
-        <label for="user-elevation">masl</label><br>
     </form>
     <h2>Brew preferences</h2>
     <h3>Acidity</h3>
