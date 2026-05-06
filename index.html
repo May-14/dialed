@@ -11,14 +11,14 @@
     <h1>Dialed</h1>
     <form id="dialed-form">
         <h2>Brew settings</h2>
-        <fieldset name="method">
+        <fieldset>
             <legend>Method</legend>
             <input type="radio" id="espresso" name="method" value="espresso">
             <label for="espresso">Espresso</label><br>
             <input type="radio" id="v60" name="method" value="v60">
             <label for="v60">V60</label><br>
         </fieldset>
-        <fieldset id="machine-capabilities-section">
+        <fieldset>
             <legend>Espresso Machine Capabilities</legend>
             <input type="checkbox" id="flow-control" name="machine-capabilities" value="flow">
             <label for="flow-control">Flow control</label><br>
@@ -29,20 +29,20 @@
         </fieldset>
         <fieldset>
             <legend>Available equipment</legend>
-            <input type="checkbox" id="test-water-gh" name="available-equipment" value="">
+            <input type="checkbox" id="test-water-gh" name="available-equipment" value="gh">
             <label for="test-water-gh">Test gh of water</label><br>
-            <input type="checkbox" id="test-water-kh" name="available-equipment" value="">
+            <input type="checkbox" id="test-water-kh" name="available-equipment" value="kh">
             <label for="test-water-kh">Test kh of water</label><br>
-            <input type="checkbox" id="test-water-tds" name="available-equipment" value="">
+            <input type="checkbox" id="test-water-tds" name="available-equipment" value="water-tds">
             <label for="test-water-tds">Test tds of water (Needs a device at least as accurate as a 
                 brix refractometer)</label><br>
-            <input type="checkbox" id="create-water" name="available-equipment" value="">
+            <input type="checkbox" id="create-water" name="available-equipment" value="custom-water">
             <label for="create-water">Create custom water (need access to distilled/reverse-osmosis water
                 & one of the following [pre-made concentrates OR access to a 0.01g scale + availability
                 to buy epsom salt & baking soda])</label><br>
-            <input type="checkbox" id="test-coffee-tds" name="available-equipment" value="">
+            <input type="checkbox" id="test-coffee-tds" name="available-equipment" value="coffee-tds">
             <label for="test-coffee-tds">Test tds of coffee (access to either a difluid r2, an Atago or a VST)</label><br>
-            <input type="checkbox" id="test-coffee-agtron" name="available-equipment" value="">
+            <input type="checkbox" id="test-coffee-agtron" name="available-equipment" value="agtron-meter">
             <label for="test-coffee-agtron">Test agtron of coffee (make one
                  <a href="https://github.com/juztins-lab/roast-meter" target="_blank">here</a> [around 30-50 usd in equipment])</label><br>
         </fieldset>
@@ -102,10 +102,10 @@
             <legend>Roast level</legend>
             <fieldset id="roast-input-section">
                 <legend>Data input</legend>
-                <input type="radio" id="visual" name="roast-input" value="visual">
-                <label for="visual">Visual</label><br>
-                <input type="radio" id="agtron" name="roast-input" value="agtron">
-                <label for="agtron">Agtron reader</label><br>
+                <input type="radio" id="visual-input" name="roast-input" value="visual-input">
+                <label for="visual-input">Visual</label><br>
+                <input type="radio" id="agtron-input" name="roast-input" value="agtron-input">
+                <label for="agtron-input">Agtron reader</label><br>
             </fieldset>
             <fieldset id="visual-roast-section">
                 <legend>Visual roast</legend>
