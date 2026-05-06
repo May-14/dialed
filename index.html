@@ -9,229 +9,251 @@
 </head>
 <body>
     <h1>Dialed</h1>
-    <h2>Brew settings</h2>
-    <h3>Method</h3>
-    <form name="method">
-        <input type="radio" id="espresso" name="method" value="espresso">
-        <label for="espresso">Espresso</label><br>
-        <input type="radio" id="v60" name="method" value="v60">
-        <label for="v60">v60</label><br>
+    <form id="dialed-form">
+        <h2>Brew settings</h2>
+        <fieldset name="method">
+            <legend>Method</legend>
+            <input type="radio" id="espresso" name="method" value="espresso">
+            <label for="espresso">Espresso</label><br>
+            <input type="radio" id="v60" name="method" value="v60">
+            <label for="v60">V60</label><br>
+        </fieldset>
+        <fieldset id="machine-capabilities-section">
+            <legend>Espresso Machine Capabilities</legend>
+            <input type="checkbox" id="flow-control" name="machine-capabilities" value="flow">
+            <label for="flow-control">Flow control</label><br>
+            <input type="checkbox" id="pressure-control" name="machine-capabilities" value="pressure">
+            <label for="pressure-control">Pressure control</label><br>
+            <input type="checkbox" id="temperature-control" name="machine-capabilities" value="temperature">
+            <label for="temperature-control">Temperature control</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Available equipment</legend>
+            <input type="checkbox" id="test-water-gh" name="available-equipment" value="">
+            <label for="test-water-gh">Test gh of water</label><br>
+            <input type="checkbox" id="test-water-kh" name="available-equipment" value="">
+            <label for="test-water-kh">Test kh of water</label><br>
+            <input type="checkbox" id="test-water-tds" name="available-equipment" value="">
+            <label for="test-water-tds">Test tds of water (Needs a device at least as accurate as a 
+                brix refractometer)</label><br>
+            <input type="checkbox" id="create-water" name="available-equipment" value="">
+            <label for="create-water">Create custom water (need access to pre-made concentrates 
+                OR access to a 0.01g scale + availability to buy sodium bicarbonate & Magnesium chloride)</label><br>
+            <input type="checkbox" id="test-coffee-tds" name="available-equipment" value="">
+            <label for="test-coffee-tds">Test tds of coffee (access to either a difluid r2, a atago or a VST)</label><br>
+            <input type="checkbox" id="test-coffee-agtron" name="available-equipment" value="">
+            <label for="test-coffee-agtron">Test agtron of coffee (make one
+                 <a href="https://github.com/juztins-lab/roast-meter">here</a> [around 30-50 usd in equipment])</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>User elevation</legend>
+            <input type="number" id="user-elevation" name="user-elevation" value="">
+            <label for="user-elevation">masl</label>
+        </fieldset>
+        <h2>Coffee info</h2>
+        <fieldset>
+            <legend>Country of origin</legend>
+            <input type="radio" id="brazil" name="origin" value="brazil">
+            <label for="brazil">Brazil</label><br>
+            <input type="radio" id="colombia" name="origin" value="colombia">
+            <label for="colombia">Colombia</label><br>
+            <input type="radio" id="costa-rica" name="origin" value="costa-rica">
+            <label for="costa-rica">Costa Rica</label><br>
+            <input type="radio" id="ethiopia" name="origin" value="ethiopia">
+            <label for="ethiopia">Ethiopia</label><br>
+            <input type="radio" id="guatemala" name="origin" value="guatemala">
+            <label for="guatemala">Guatemala</label><br>
+            <input type="radio" id="kenya" name="origin" value="kenya">
+            <label for="kenya">Kenya</label><br>
+            <input type="radio" id="mexico" name="origin" value="mexico">
+            <label for="mexico">Mexico</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Varietal</legend>
+            <input type="radio" id="bourbon" name="varietal" value="bourbon">
+            <label for="bourbon">Bourbon</label><br>
+            <input type="radio" id="castillo" name="varietal" value="castillo">
+            <label for="castillo">Castillo</label><br>
+            <input type="radio" id="catuai" name="varietal" value="catuai">
+            <label for="catuai">Catuai</label><br>
+            <input type="radio" id="caturra" name="varietal" value="caturra">
+            <label for="caturra">Caturra</label><br>
+            <input type="radio" id="gesha" name="varietal" value="gesha">
+            <label for="gesha">Gesha / Geisha</label><br>
+            <input type="radio" id="heirloom" name="varietal" value="heirloom">
+            <label for="heirloom">Heirloom (Ethiopian)</label><br>
+            <input type="radio" id="maragogipe" name="varietal" value="maragogipe">
+            <label for="maragogipe">Maragogipe</label><br>
+            <input type="radio" id="mundo-novo" name="varietal" value="mundo-novo">
+            <label for="mundo-novo">Mundo Novo</label><br>
+            <input type="radio" id="pacamara" name="varietal" value="pacamara">
+            <label for="pacamara">Pacamara</label><br>
+            <input type="radio" id="sl28" name="varietal" value="sl28">
+            <label for="sl28">SL28</label><br>
+            <input type="radio" id="sl34" name="varietal" value="sl34">
+            <label for="sl34">SL34</label><br>
+            <input type="radio" id="typica" name="varietal" value="typica">
+            <label for="typica">Typica</label><br>
+            <input type="radio" id="wush-wush" name="varietal" value="wush-wush">
+            <label for="wush-wush">Wush Wush</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Roast level</legend>
+            <fieldset id="roast-input-section">
+                <legend>Data input</legend>
+                <input type="radio" id="visual" name="roast-input" value="visual">
+                <label for="visual">Visual</label><br>
+                <input type="radio" id="agtron" name="roast-input" value="agtron">
+                <label for="agtron">Agtron reader</label><br>
+            </fieldset>
+            <fieldset id="visual-roast-section">
+                <legend>Visual roast</legend>
+                <input type="radio" id="ultra-light" name="visual-roast-input" value="ultra-light">
+                <label for="ultra-light">Ultra light</label><br>
+                <input type="radio" id="light" name="visual-roast-input" value="light">
+                <label for="light">Light</label><br>
+                <input type="radio" id="med-light" name="visual-roast-input" value="med-light">
+                <label for="med-light">Medium light</label><br>
+                <input type="radio" id="med" name="visual-roast-input" value="med">
+                <label for="med">Medium</label><br>
+                <input type="radio" id="med-dark" name="visual-roast-input" value="med-dark">
+                <label for="med-dark">Medium dark</label><br>
+                <input type="radio" id="dark" name="visual-roast-input" value="dark">
+                <label for="dark">Dark</label><br>
+            </fieldset>
+            <fieldset id="agtron-section">
+                <legend>Agtron reader</legend>
+                <input type="number" id="agtron-value" name="agtron-value" value="">
+                <label for="agtron-value">Agtron number</label>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>Processing</legend>
+            <input type="radio" id="washed" name="process" value="washed">
+            <label for="washed">Washed</label><br>
+            <input type="radio" id="natural" name="process" value="natural">
+            <label for="natural">Natural</label><br>
+            <input type="radio" id="honey" name="process" value="honey">
+            <label for="honey">Honey</label><br>
+            <input type="radio" id="anaerobic" name="process" value="anaerobic">
+            <label for="anaerobic">Anaerobic</label><br>
+            <input type="radio" id="carbonic-maceration" name="process" value="carbonic-maceration">
+            <label for="carbonic-maceration">Carbonic Maceration</label><br>
+            <input type="radio" id="thermal-shock" name="process" value="thermal-shock">
+            <label for="thermal-shock">Thermal Shock / Co-ferment</label><br>
+            <input type="radio" id="decaf" name="process" value="decaf">
+            <label for="decaf">Decaf (SWP / EA)</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Bean age</legend>
+            <input type="number" id="age" name="age" value="">
+            <label for="age">Days since roast</label>
+        </fieldset>
+        <fieldset>
+            <legend>Bean elevation</legend>
+            <input type="number" id="bean-elevation" name="bean-elevation" value="">
+            <label for="bean-elevation">masl</label>
+        </fieldset>
+        <h2>Water composition</h2>
+        <fieldset>
+            <legend>pH</legend>
+            <input type="range" id="ph" name="ph" min="0" max="14" step="0.1">
+            <label for="ph" id="ph-label">7.0</label>
+        </fieldset>
+        <fieldset>
+            <legend>TDS</legend>
+            <input type="range" id="tds" name="tds" min="75" max="250">
+            <label for="tds" id="tds-label">150 ppm</label>
+        </fieldset>
+        <fieldset>
+            <legend>GH</legend>
+            <input type="radio" id="gh-1" name="gh" value="1">
+            <label for="gh-1">1 Drop (1 dGH / 17.9 ppm)</label><br>
+            <input type="radio" id="gh-2" name="gh" value="2">
+            <label for="gh-2">2 Drops (2 dGH / 35.8 ppm)</label><br>
+            <input type="radio" id="gh-3" name="gh" value="3">
+            <label for="gh-3">3 Drops (3 dGH / 53.7 ppm)</label><br>
+            <input type="radio" id="gh-4" name="gh" value="4">
+            <label for="gh-4">4 Drops (4 dGH / 71.6 ppm)</label><br>
+            <input type="radio" id="gh-5" name="gh" value="5">
+            <label for="gh-5">5 Drops (5 dGH / 89.5 ppm)</label><br>
+            <input type="radio" id="gh-6" name="gh" value="6">
+            <label for="gh-6">6 Drops (6 dGH / 107.4 ppm)</label><br>
+            <input type="radio" id="gh-7" name="gh" value="7">
+            <label for="gh-7">7 Drops (7 dGH / 125.3 ppm)</label><br>
+            <input type="radio" id="gh-8" name="gh" value="8">
+            <label for="gh-8">8 Drops (8 dGH / 143.2 ppm)</label><br>
+            <input type="radio" id="gh-9" name="gh" value="9">
+            <label for="gh-9">9 Drops (9 dGH / 161.1 ppm)</label><br>
+            <input type="radio" id="gh-10" name="gh" value="10">
+            <label for="gh-10">10 Drops (10 dGH / 179.0 ppm)</label><br>
+            <input type="radio" id="gh-11" name="gh" value="11">
+            <label for="gh-11">11 Drops (11 dGH / 196.9 ppm)</label><br>
+            <input type="radio" id="gh-12" name="gh" value="12">
+            <label for="gh-12">12 Drops (12 dGH / 214.8 ppm)</label><br>
+            <input type="radio" id="gh-13" name="gh" value="13">
+            <label for="gh-13">13 Drops (13 dGH / 232.7 ppm)</label><br>
+            <input type="radio" id="gh-14" name="gh" value="14">
+            <label for="gh-14">14 Drops (14 dGH / 250.6 ppm)</label><br>
+            <input type="radio" id="gh-15" name="gh" value="15">
+            <label for="gh-15">15+ Drops (15+ dGH / 268.5+ ppm)</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>KH</legend>
+            <input type="radio" id="kh-1" name="kh" value="1">
+            <label for="kh-1">1 Drop (1 dKH / 17.9 ppm)</label><br>
+            <input type="radio" id="kh-2" name="kh" value="2">
+            <label for="kh-2">2 Drops (2 dKH / 35.8 ppm)</label><br>
+            <input type="radio" id="kh-3" name="kh" value="3">
+            <label for="kh-3">3 Drops (3 dKH / 53.7 ppm)</label><br>
+            <input type="radio" id="kh-4" name="kh" value="4">
+            <label for="kh-4">4 Drops (4 dKH / 71.6 ppm)</label><br>
+            <input type="radio" id="kh-5" name="kh" value="5">
+            <label for="kh-5">5 Drops (5 dKH / 89.5 ppm)</label><br>
+            <input type="radio" id="kh-6" name="kh" value="6">
+            <label for="kh-6">6 Drops (6 dKH / 107.4 ppm)</label><br>
+            <input type="radio" id="kh-7" name="kh" value="7">
+            <label for="kh-7">7 Drops (7 dKH / 125.3 ppm)</label><br>
+            <input type="radio" id="kh-8" name="kh" value="8">
+            <label for="kh-8">8 Drops (8 dKH / 143.2 ppm)</label><br>
+            <input type="radio" id="kh-9" name="kh" value="9">
+            <label for="kh-9">9 Drops (9 dKH / 161.1 ppm)</label><br>
+            <input type="radio" id="kh-10" name="kh" value="10">
+            <label for="kh-10">10 Drops (10 dKH / 179.0 ppm)</label><br>
+            <input type="radio" id="kh-11" name="kh" value="11">
+            <label for="kh-11">11 Drops (11 dKH / 196.9 ppm)</label><br>
+            <input type="radio" id="kh-12" name="kh" value="12">
+            <label for="kh-12">12 Drops (12 dKH / 214.8 ppm)</label><br>
+            <input type="radio" id="kh-13" name="kh" value="13">
+            <label for="kh-13">13 Drops (13 dKH / 232.7 ppm)</label><br>
+            <input type="radio" id="kh-14" name="kh" value="14">
+            <label for="kh-14">14 Drops (14 dKH / 250.6 ppm)</label><br>
+            <input type="radio" id="kh-15" name="kh" value="15">
+            <label for="kh-15">15+ Drops (15+ dKH / 268.5+ ppm)</label><br>
+        </fieldset>
+        <h2>Brew preferences</h2>
+        <fieldset>
+            <legend>Acidity</legend>
+            <input type="range" id="acidity" name="acidity" min="1" max="5">
+            <label for="acidity" id="acidity-label">3</label>
+        </fieldset>
+        <fieldset>
+            <legend>Sweetness</legend>
+            <input type="range" id="sweetness" name="sweetness" min="1" max="5">
+            <label for="sweetness" id="sweetness-label">3</label>
+        </fieldset>
+        <fieldset>
+            <legend>Body</legend>
+            <input type="range" id="body" name="body" min="1" max="5">
+            <label for="body" id="body-label">3</label>
+        </fieldset>
+        <fieldset>
+            <legend>Clarity &#8596; Balance</legend>
+            <input type="range" id="clarity-balance" name="clarity-balance" min="1" max="5">
+            <label for="clarity-balance" id="clarity-balance-label">3</label>
+        </fieldset>
+        <h2>Brew</h2>
+        <button type="button" id="brew-btn">Brew coffee</button>
     </form>
-    <h3>Espresso Machine Capabilities</h3>
-    <form name="machine-capabilities">
-        <input type="checkbox" id="flow-control" name="machine-capabilities" value="flow">
-        <label for="flow-control">Flow control</label><br>
-        <input type="checkbox" id="pressure-control" name="machine-capabilities" value="pressure">
-        <label for="pressure-control">Pressure Control</label><br>
-        <input type="checkbox" id="temperature-control" name="machine-capabilities" value="temperature">
-        <label for="temperature-contro">Temperature Control</label><br>
-    </form>
-    <h3>User elevation</h3>
-    <form name="user-elevation">
-        <input type="number" id="user-elevation" name="user-elevation" value="">
-        <label for="user-elevation">masl</label><br>
-    </form>
-    <h2>Coffee info</h2>
-    <h3>Coffee Country of Origin</h3>
-    <form name="origin">
-        <input type="radio" id="brazil" name="origin" value="brazil">
-        <label for="brazil">Brazil</label><br>
-        <input type="radio" id="colombia" name="origin" value="colombia">
-        <label for="colombia">Colombia</label><br>
-        <input type="radio" id="costa-rica" name="origin" value="costa-rica">
-        <label for="costa-rica">Costa Rica</label><br>
-        <input type="radio" id="ethiopia" name="origin" value="ethiopia">
-        <label for="ethiopia">Ethiopia</label><br>
-        <input type="radio" id="guatemala" name="origin" value="guatemala">
-        <label for="guatemala">Guatemala</label><br>
-        <input type="radio" id="kenya" name="origin" value="kenya">
-        <label for="kenya">Kenya</label><br>
-        <input type="radio" id="mexico" name="origin" value="mexico">
-        <label for="mexico">Mexico</label><br>
-    </form>
-    <h3>Coffee Varietal</h3>
-    <form name="varietal">
-        <input type="radio" id="bourbon" name="varietal" value="bourbon">
-        <label for="bourbon">Bourbon</label><br>
-        <input type="radio" id="castillo" name="varietal" value="castillo">
-        <label for="castillo">Castillo</label><br>
-        <input type="radio" id="catuai" name="varietal" value="catuai">
-        <label for="catuai">Catuai</label><br>
-        <input type="radio" id="caturra" name="varietal" value="caturra">
-        <label for="caturra">Caturra</label><br>
-        <input type="radio" id="gesha" name="varietal" value="gesha">
-        <label for="gesha">Gesha / Geisha</label><br>
-        <input type="radio" id="heirloom" name="varietal" value="heirloom">
-        <label for="heirloom">Heirloom (Ethiopian)</label><br>
-        <input type="radio" id="maragogipe" name="varietal" value="maragogipe">
-        <label for="maragogipe">Maragogipe</label><br>
-        <input type="radio" id="mundo-novo" name="varietal" value="mundo-novo">
-        <label for="mundo-novo">Mundo Novo</label><br>
-        <input type="radio" id="pacamara" name="varietal" value="pacamara">
-        <label for="pacamara">Pacamara</label><br>
-        <input type="radio" id="sl28" name="varietal" value="sl28">
-        <label for="sl28">SL28</label><br>
-        <input type="radio" id="sl34" name="varietal" value="sl34">
-        <label for="sl34">SL34</label><br>
-        <input type="radio" id="typica" name="varietal" value="typica">
-        <label for="typica">Typica</label><br>
-        <input type="radio" id="wush-wush" name="varietal" value="wush-wush">
-        <label for="wush-wush">Wush Wush</label><br>
-    </form>
-        <h3>Roast level</h3>
-    <h4>Data input</h4>
-    <form name="roast-input">
-        <input type="radio" id="visual" name="roast-input" value="visual">
-        <label for="visual">Visual</label><br>
-        <input type="radio" id="agtron" name="roast-input" value="agtron">
-        <label for="agtron">Agtron reader</label><br>
-    </form>
-    <h4>Visual roast input</h4>
-    <form name="visual-roast-input">
-        <input type="radio" id="ultra-light" name="visual-roast-input" value="ultra-light">
-        <label for="ultra-light">Ultra light</label><br>
-        <input type="radio" id="light" name="visual-roast-input" value="light">
-        <label for="light">Light</label><br>
-        <input type="radio" id="med-light" name="visual-roast-input" value="med-light">
-        <label for="med-light">Medium light</label><br>
-        <input type="radio" id="med" name="visual-roast-input" value="med">
-        <label for="med">Medium</label><br>
-        <input type="radio" id="med-dark" name="visual-roast-input" value="med-dark">
-        <label for="med-dark">Medium dark</label><br>
-        <input type="radio" id="dark" name="visual-roast-input" value="dark">
-        <label for="dark">Dark</label><br>
-    </form>
-    <h4>Agtron reader input</h4>
-    <form name="agtron">
-        <input type="number" id="agtron-value" name="agtron" value="">
-        <label for="agtron-value">Agtron number</label><br>
-    </form>
-    <h3>Coffee processing</h3>
-    <form name="process-input">
-        <input type="radio" id="washed" name="process-input" value="washed">
-        <label for="washed">Washed</label><br>
-        <input type="radio" id="natural" name="process-input" value="natural">
-        <label for="natural">Natural</label><br>
-        <input type="radio" id="honey" name="process-input" value="honey">
-        <label for="honey">Honey</label><br>
-        <input type="radio" id="anaerobic" name="process-input" value="anaerobic">
-        <label for="anaerobic">Anaerobic</label><br>
-        <input type="radio" id="carbonic-maceration" name="process-input" value="carbonic-maceration">
-        <label for="carbonic-maceration">Carbonic Maceration</label><br>
-        <input type="radio" id="thermal-shock" name="process-input" value="thermal-shock">
-        <label for="thermal-shock">Thermal Shock / Co-ferment</label><br>
-        <input type="radio" id="decaf" name="process-input" value="decaf">
-        <label for="decaf">Decaf (SWP / EA)</label><br>
-    </form>
-    <h3>Bean age (in days)</h3>
-    <form name="age">
-        <input type="number" id="age" name="age" value="">
-        <label for="age">Days</label><br>
-    </form>
-    <h3>Bean elevation</h3>
-    <form name="bean-elevation">
-        <input type="number" id="bean-elevation" name="bean-elevation" value="">
-        <label for="bean-elevation">masl</label><br>
-    </form>
-    <h2>Water composition</h2>
-    <h3>PH</h3>
-    <form name="ph">
-        <input type="range" id="ph" name="ph" min="0" max="14">
-        <label for="ph"></label>
-    </form>
-    <h3>TDS</h3>
-    <form name="tds">
-        <input type="range" id="tds" name="tds" min="75" max="250">
-        <label for="tds"></label>
-    </form>
-    <h3>GH</h3>
-    <form name="gh">
-        <input type="radio" id="gh-1" name="gh" value="1">
-        <label for="gh-1">1 Drop (1 dGH / 17.9 ppm)</label><br>
-        <input type="radio" id="gh-2" name="gh" value="2">
-        <label for="gh-2">2 Drops (2 dGH / 35.8 ppm)</label><br>
-        <input type="radio" id="gh-3" name="gh" value="3">
-        <label for="gh-3">3 Drops (3 dGH / 53.7 ppm)</label><br>
-        <input type="radio" id="gh-4" name="gh" value="4">
-        <label for="gh-4">4 Drops (4 dGH / 71.6 ppm)</label><br>
-        <input type="radio" id="gh-5" name="gh" value="5">
-        <label for="gh-5">5 Drops (5 dGH / 89.5 ppm)</label><br>
-        <input type="radio" id="gh-6" name="gh" value="6">
-        <label for="gh-6">6 Drops (6 dGH / 107.4 ppm)</label><br>
-        <input type="radio" id="gh-7" name="gh" value="7">
-        <label for="gh-7">7 Drops (7 dGH / 125.3 ppm)</label><br>
-        <input type="radio" id="gh-8" name="gh" value="8">
-        <label for="gh-8">8 Drops (8 dGH / 143.2 ppm)</label><br>
-        <input type="radio" id="gh-9" name="gh" value="9">
-        <label for="gh-9">9 Drops (9 dGH / 161.1 ppm)</label><br>
-        <input type="radio" id="gh-10" name="gh" value="10">
-        <label for="gh-10">10 Drops (10 dGH / 179.0 ppm)</label><br>
-        <input type="radio" id="gh-11" name="gh" value="11">
-        <label for="gh-11">11 Drops (11 dGH / 196.9 ppm)</label><br>
-        <input type="radio" id="gh-12" name="gh" value="12">
-        <label for="gh-12">12 Drops (12 dGH / 214.8 ppm)</label><br>
-        <input type="radio" id="gh-13" name="gh" value="13">
-        <label for="gh-13">13 Drops (13 dGH / 232.7 ppm)</label><br>
-        <input type="radio" id="gh-14" name="gh" value="14">
-        <label for="gh-14">14 Drops (14 dGH / 250.6 ppm)</label><br>
-        <input type="radio" id="gh-15" name="gh" value="15">
-        <label for="gh-15">15+ Drops (15+ dGH / 268.5+ ppm)</label><br>
-    </form>
-        <h3>KH</h3>
-    <form name="kh">
-        <input type="radio" id="kh-1" name="kh" value="1">
-        <label for="kh-1">1 Drop (1 dKH / 17.9 ppm)</label><br>
-        <input type="radio" id="kh-2" name="kh" value="2">
-        <label for="kh-2">2 Drops (2 dKH / 35.8 ppm)</label><br>
-        <input type="radio" id="kh-3" name="kh" value="3">
-        <label for="kh-3">3 Drops (3 dKH / 53.7 ppm)</label><br>
-        <input type="radio" id="kh-4" name="kh" value="4">
-        <label for="kh-4">4 Drops (4 dKH / 71.6 ppm)</label><br>
-        <input type="radio" id="kh-5" name="kh" value="5">
-        <label for="kh-5">5 Drops (5 dKH / 89.5 ppm)</label><br>
-        <input type="radio" id="kh-6" name="kh" value="6">
-        <label for="kh-6">6 Drops (6 dKH / 107.4 ppm)</label><br>
-        <input type="radio" id="kh-7" name="kh" value="7">
-        <label for="kh-7">7 Drops (7 dKH / 125.3 ppm)</label><br>
-        <input type="radio" id="kh-8" name="kh" value="8">
-        <label for="kh-8">8 Drops (8 dKH / 143.2 ppm)</label><br>
-        <input type="radio" id="kh-9" name="kh" value="9">
-        <label for="kh-9">9 Drops (9 dKH / 161.1 ppm)</label><br>
-        <input type="radio" id="kh-10" name="kh" value="10">
-        <label for="kh-10">10 Drops (10 dKH / 179.0 ppm)</label><br>
-        <input type="radio" id="kh-11" name="kh" value="11">
-        <label for="kh-11">11 Drops (11 dKH / 196.9 ppm)</label><br>
-        <input type="radio" id="kh-12" name="kh" value="12">
-        <label for="kh-12">12 Drops (12 dKH / 214.8 ppm)</label><br>
-        <input type="radio" id="kh-13" name="kh" value="13">
-        <label for="kh-13">13 Drops (13 dKH / 232.7 ppm)</label><br>
-        <input type="radio" id="kh-14" name="kh" value="14">
-        <label for="kh-14">14 Drops (14 dKH / 250.6 ppm)</label><br>
-        <input type="radio" id="kh-15" name="kh" value="15">
-        <label for="kh-15">15+ Drops (15+ dKH / 268.5+ ppm)</label><br>
-    </form>
-    <h2>Brew preferences</h2>
-    <h3>Acidity</h3>
-    <form name="acidity">
-        <input type="range" id="acidity" name="acidity" min="1" max="5">
-        <label for="acidity"></label>
-    </form>
-    <h3>Sweetness</h3>
-    <form name="sweetness">
-        <input type="range" id="sweetness" name="sweetness" min="1" max="5">
-        <label for="sweetness"></label>
-    </form>
-    <h3>Body</h3>
-    <form name="body">
-        <input type="range" id="body" name="body" min="1" max="5">
-        <label for="body"></label>
-    </form>
-    <h3>Clarity - balance</h3>
-    <form name="clarity-balance">
-        <input type="range" id="clarity-balance" name="clarity-balance" min="1" max="5">
-        <label for="clarity-balance">Clarity <--> balance</label>
-    </form>
-    <h2>Brew</h2>
-    <button id="brew-btn">Brew coffee</button>
 </body>
 </html>
