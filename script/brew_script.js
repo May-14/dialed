@@ -27,5 +27,9 @@ populateSection(coffeeInfo, coffeeInfoSection)
 populateSection(waterComposition, waterCompositionSection)
 populateSection(brewPreferences, brewPreferencesSection)
 
+const editInfoBtn = document.querySelector("#edit-brew-info")
 
+editInfoBtn.addEventListener("click", () => {
+    window.location = "index.html"
+})
 
